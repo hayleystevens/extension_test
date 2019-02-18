@@ -8,6 +8,8 @@
     tableau.extensions.initializeAsync().then(function () {
       // Once the extension is initialized, ask the user to choose a sheet
       showChooseSheetDialog();
+
+      initializeButtons();
     });
   });
 
@@ -28,8 +30,7 @@
     // Next, we loop through all of these worksheets add add buttons for each one
     worksheets.forEach(function (worksheet) {
       // Declare our new button which contains the sheet name
-      const button = $("<button type='button' class='btn btn-default btn-block'></button>");
-      button.text(worksheet.name);
+      const button = createButton(worksheet.name);
 
       // Create an event handler for when this button is clicked
       button.click(function () {
@@ -49,8 +50,49 @@
     $('#choose_sheet_dialog').modal('toggle');
   }
 
-  function loadSelectedMarks (worksheetName) {
-    // For now, just pop up an alert saying that we've selected a sheet
-    alert(`Loading selected marks for ${worksheetName}`);
+  function createButton (buttonTitle) {
+    const button =
+    $(`<button type='button' class='btn btn-default btn-block'>
+      ${buttonTitle}
+    </button>`);
+
+    return button;
+  }
+
+  function listenToMarksSelection() {  
+    viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, onMarksSelection);  
+}  
+
+function onMarksSelection(marksEvent) {  
+    return marksEvent.getMarksAsync().then(reportSelectedMarks);  
+}  
+
+function reportSelectedMarks(marks) {  
+    var html = "";   
+      
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {  
+        var pairs = marks[markIndex].getPairs();  
+        html += "<b>Mark " + markIndex + ":</b><ul>";  
+
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {  
+            var pair = pairs[pairIndex];  
+            html += "<li><b>Field Name:</b> " + pair.fieldName;  
+            html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";  
+        }  
+        html += "</ul>";  
+    }  
+
+    var infoDiv = document.getElementById('markDetails');  
+    infoDiv.innerHTML = html;  
+}  
+  function initializeButtons () {
+    $('#show_choose_sheet_button').click(showChooseSheetDialog);
+  }
+
+  function getSelectedSheet (worksheetName) {
+    // Go through all the worksheets in the dashboard and find the one we want
+    return tableau.extensions.dashboardContent.dashboard.worksheets.find(function (sheet) {
+      return sheet.name === worksheetName;
+    });
   }
 })();
