@@ -71,7 +71,6 @@
 
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
-    alert(worksheet.name);
    
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(reportSelectedMarks);
@@ -88,7 +87,6 @@
         });
       alert("Mark-0.0" + data[0][0]);
       alert("Mark-0.1" + data[0][1]);
-      alert("Mark-1.1" + data[1][1]);
       $('#returnID-Title').text((data[0][0]));
       }
          
