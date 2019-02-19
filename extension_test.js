@@ -85,8 +85,9 @@
   
           return rowData;
         });
-        var  Platform=text((data[0][0]));
-        var VideoID = text((data[0][1]));
+
+        var Platform = text(data[0][0]);
+        var VideoID=text(data[0][1]);
          alert("Platform" + Platform);
       alert("VideoID" + VideoID);
       }
