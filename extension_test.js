@@ -85,19 +85,13 @@
   
           return rowData;
         });
-        alert("1.0 "+(data[1][0]));
-        alert("0.1 "+(data[0][1]));
-        alert("1.1 "+(data[1][1]));  
-      $('#Platform').text(data[0][0]);
-      $('#FBLink').text("https://www.facebook.com/")+text(data[0][0]);
-      $('#VideoID').text(data[0][1]);      
+        
+      $('#Platform').text((data[0][0]));
+      $('#Video ID').text((data[0][1]));
+      alert("Platform" + data[0][0]);
+      alert("VideoID" + data[0][1]);
       }
-
-      //Need to return the following variables, Platform and Video ID
-      //If UPPER(Platform) = 'YOUTUBE' then 'https://www.youtube.com/embed/'+VIDEO ID
-      //If UPPER(Platform) = 'FACEOOK' THEN JAVASCRIPT AND HTML
-      //ELSE '' // Other set up for YouTube and Facebook 
-      
+         
 
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
@@ -105,7 +99,7 @@
       loadSelectedMarks(worksheetName);
     });
   }
-  
+
   function initializeButtons () {
     $('#show_choose_sheet_button').click(showChooseSheetDialog);
   }
