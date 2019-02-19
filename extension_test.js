@@ -75,7 +75,7 @@
     $('#selected_marks_title').text(worksheet.name);
 
     // Call to get the selected marks for our sheet
-    alert(worksheet.marks)
+    alert(worksheet)
     worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
 
   function reportSelectedMarks(marks) {
