@@ -100,8 +100,8 @@
         });
       alert("Mark1" + marks.data[0]);
       alert("Mark2" + data);
-      alert("Mark3" + marks.data[0].data[0]);
-      alert("Mark4" + marks.data[0]);
+      alert("Mark3" + marks.data[0].data[0][0]);
+      alert("Mark4" + marks.data[0].data[0][1]);
     
       //  $.each(marks, function (i, mark) {
     
