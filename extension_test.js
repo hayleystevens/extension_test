@@ -73,6 +73,7 @@
 
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
+    alert(worksheet.name);
 
     // Call to get the selected marks for our sheet
 
