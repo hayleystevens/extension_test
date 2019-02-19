@@ -100,7 +100,7 @@
         });
       // alert("Mark1" + marks.data[0]);
       // alert("Mark2" + data);
-      // alert("Mark3" + data[0][0]);
+      alert("Mark3" + data[0][0]);
       $('#returnID').text(filtervalues(data[0][0]));
       }
       function filtervalues(val){
