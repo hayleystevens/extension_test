@@ -78,7 +78,8 @@
  worksheet.getSummaryDataAsync().then(function (sumdata) {
   const worksheetData = sumdata;
  });
- alert("sumdata");
+ 
+ alert(sumdata);
 
 
     // Add an event listener for the selection changed event on this sheet.
