@@ -85,21 +85,21 @@
     
       else {
     
-      var alertOutput="";
+      var alertOutput=marks;
     
-       $.each(marks, function (i, mark) {
+      //  $.each(marks, function (i, mark) {
     
-       alertOutput = alertOutput + "marks:\n";
+      //  alertOutput = alertOutput + "marks:\n";
     
-      $.each(mark.getPairs(), function (j, pair) {
+      // $.each(mark.getPairs(), function (j, pair) {
     
-      alertOutput = alertOutput + "  " + (pair.fieldName) + ": " + pair.value;
+      // alertOutput = alertOutput + "  " + (pair.fieldName) + ": " + pair.value;
     
-      });
+      // });
     
-      alertOutput = alertOutput + "\n";
+      // alertOutput = alertOutput + "\n";
     
-       });
+      //  });
     
       }
     
