@@ -74,7 +74,7 @@
    
  // get the summary data for the sheet
 
- tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === "Details").getUnderlyingDataAsync().then(dataTable => {
+ tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheetName).getUnderlyingDataAsync().then(dataTable => {
   let field = dataTable.columns.find(column => column.fieldName === "Platform");
   let list = [];
   for (let row of dataTable.data) {
