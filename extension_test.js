@@ -101,24 +101,16 @@
       // alert("Mark1" + marks.data[0]);
       // alert("Mark2" + data);
       // alert("Mark3" + data[0][0]);
-      $('#returnID').text(data[0][0]);
-      // alert("Mark4" + data[0][1]);
-    
-      //  $.each(marks, function (i, mark) {
-    
-      //  alertOutput = alertOutput + "marks:\n";
-    
-      // $.each(mark.getPairs(), function (j, pair) {
-    
-      // alertOutput = alertOutput + "  " + (pair.fieldName) + ": " + pair.value;
-    
-      // });
-    
-      // alertOutput = alertOutput + "\n";
-    
-      //  });
-    
+      $('#returnID').text(filtervalues(data[0][0]));
       }
+      function filtervalues(val){
+        if(val == "West"){
+          return "this is awesome"
+        }
+        else{
+          return "The rest of the country"
+        }
+      };
     
       // alert(alertOutput);
     
