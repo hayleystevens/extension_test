@@ -76,9 +76,9 @@
 
     // Call to get the selected marks for our sheet
 
-    tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheet.name).getSelectedMarksAsync().then(reportSelectedMarks);
+    // tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheet.name).getSelectedMarksAsync().then(reportSelectedMarks);
 
-    // worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
+    worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
 
   function reportSelectedMarks(marks) {
       var html = "";
@@ -129,7 +129,7 @@
   // $('#returnID').text(found_ID);
 
     // Add an event listener for the selection changed event on this sheet.
-    unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
+    unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterEvent) {
       // When the selection changes, reload the data
       loadSelectedMarks(worksheetName);
     });
