@@ -101,16 +101,8 @@
       // alert("Mark1" + marks.data[0]);
       // alert("Mark2" + data);
       alert("Mark3" + data[0][0]);
-      $('#returnID-Title').text(filtervalues(data[0][0]));
-      }
-      function filtervalues(val){
-        if(val == "West"){
-          return "this is awesome"
-        }
-        else{
-          return "The rest of the country"
-        }
-      };
+      $('#returnID-Title').text((data[0][0]));
+      };      
     
       // alert(alertOutput);
     
