@@ -85,8 +85,6 @@
   
           return rowData;
         });
-      alert("Mark-0.0" + data[0][0]);
-      alert("Mark-0.1" + data[0][1]);
       $('#returnID-Title').text((data[0][0]));
       }
          
