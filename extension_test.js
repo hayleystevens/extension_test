@@ -76,14 +76,7 @@
     worksheet.getSummaryDataAsync().then(function(t){  
       var rawData = t.getData();  
  }); 
- alert(rawData);
-
-  
-      // alert("Mark1" + marks.data[0]);
-      // alert("Mark2" + data);
-      alert("Mark3" + data[0][0]);
-      $('#returnID-Title').text((data[0][0]));
-      };      
+ alert(rawData); 
     
 
     // Add an event listener for the selection changed event on this sheet.
@@ -103,4 +96,4 @@
       return sheet.name === worksheetName;
     });
   }
-}})();
+})();
