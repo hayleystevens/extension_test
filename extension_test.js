@@ -98,17 +98,8 @@
       // alert("Mark1" + marks.data[0]);
       alert("Mark0-6" + data[0][6]);
       alert("Mark6-0" + data[6][0]);
-      $('#returnID').text(filtervalues(data[0][0]));
-      }
-      function filtervalues(val){
-        if(val == "West"){
-          return "this is awesome"
-        }
-        else{
-          return "The rest of the country"
-        }
-      };
-    
+      $('#returnID').text(data[0][0]);
+      };    
 
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
