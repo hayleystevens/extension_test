@@ -77,7 +77,6 @@
  worksheet.getSummaryDataAsync().then(reportSelectedMarks);
     function reportSelectedMarks(sumdata) {
       const worksheetData = sumdata;
-      alert("sumdata"+sumdata);
 
         // Map our data into the format which the data table component expects it
         const data = worksheetData.data.map(function (row, index) {
@@ -87,8 +86,9 @@
   
           return rowData;
         });
-
-      alert("Mark3" + data[0][0]);
+      alert("Mark-0.0" + data[0][0]);
+      alert("Mark-0.1" + data[0][1]);
+      alert("Mark-1.1" + data[1][1]);
       $('#returnID-Title').text((data[0][0]));
       }
          
