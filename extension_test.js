@@ -88,15 +88,19 @@
               if (pair.fieldName="ID")
               {
                 var found_ID=pair.formattedValue;
+                return found_ID;
+              }
+              else{
+                var found_ID = "could not find";
+                return found_ID;
               }
             }
-            $('#returnID').text(found_ID);
-            return found_ID;
+           
 
       }
   }
 
-  
+  $('#returnID').text(found_ID);
 
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
