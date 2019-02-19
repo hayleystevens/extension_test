@@ -5,7 +5,8 @@
        <name resource-id="name"/>
        <description>This extension uses the platform and the video ID to embed social media videos within Tableau. To make the extension work, complete the following:
        - Create another worksheet, Details, that includes the platform name and video id. 
-       - Add an action filter to the dashboard that applies to the worksheet, Details. Make sure the settings are as follows: Run Action on: Select, Run On Single Select Only, Clearning the selection will Exclude all values
+       - Add an action filter to the dashboard that applies to the worksheet, Details. Make sure it Runs on Select & Clearning the selection will Exclude all values
+       - If more than one value is selected, the extension will return the first value.
        - Load the extension. When the extension loads, select Details as the Worksheet.
        - Make sure NOT to delete the Details worksheek from the dashboard. If you want to hide it, change it to floating and change the size.</description>
        <author name="Hayley Stevens" email="hayley.stevens@slalom.com" organization="Slalom" website="https://www.slalom.com"/>
