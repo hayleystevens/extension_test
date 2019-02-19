@@ -75,7 +75,7 @@
     $('#selected_marks_title').text(worksheet.name);
 
     // Call to get the selected marks for our sheet
-    alert()
+
     tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheet.name).getSelectedMarksAsync().then(reportSelectedMarks);
 
     // worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
@@ -89,7 +89,10 @@
       else {
     
       
-      alert("Mark Len" + marks.data[0]);
+      alert("Mark1" + marks.data[0]);
+      alert("Mark2" + marks.data[0][0]);
+      alert("Mark3" + marks.data[0].data[0]);
+      alert("Mark4" + marks.data[0][1][2]);
     
       //  $.each(marks, function (i, mark) {
     
