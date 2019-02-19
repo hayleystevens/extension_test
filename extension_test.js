@@ -75,19 +75,8 @@
     $('#selected_marks_title').text(worksheet.name);
 
     // Call to get the selected marks for our sheet
-    alert("TEST" + worksheet.getSelectedMarksAsync().then( function(marks){  
-      var name = sheet.getName();  
-      var aData = [];  
-      for (var markIndex = 0; markIndex < marks.length; markIndex++) {  
-         var pairs = marks[markIndex].getPairs();  
-         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {  
-            var pair = pairs[pairIndex];  
-            aData.push([name, markIndex, pair.fieldName, pair.value ] );  
-         }  
-      }  
-      return aData;  
-   }) )
-    worksheet.getSelectedMarksAsync().then($('#returnID-Title').text(reportSelectedMarks));
+    alert(worksheet.marks)
+    worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
 
   function reportSelectedMarks(marks) {
       var html = "";
