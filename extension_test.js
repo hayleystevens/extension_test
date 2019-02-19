@@ -73,12 +73,31 @@
     $('#selected_marks_title').text(worksheet.name);
     alert(worksheet.name);
    
-
  // get the summary data for the sheet
- worksheet.getSummaryDataAsync().then(function (sumdata) {
-  const worksheetData = sumdata;
- });
- alert("sumdata"+sumdata);
+ worksheet.getSummaryDataAsync().then(reportSelectedMarks);
+    function reportSelectedMarks(marks) {
+      var html = "";
+      if (marks.length == 0)
+
+      alert("selectedMarks: empty list");
+    
+      else {
+    
+        const worksheetData = marks.data[0];
+
+        // Map our data into the format which the data table component expects it
+        const data = worksheetData.data.map(function (row, index) {
+          const rowData = row.map(function (cell) {
+            return cell.formattedValue;
+          });
+  
+          return rowData;
+        });
+
+      alert("Mark3" + data[0][0]);
+      $('#returnID-Title').text((data[0][0]));
+      }
+         
 
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
@@ -97,4 +116,4 @@
       return sheet.name === worksheetName;
     });
   }
-})();
+}})();
