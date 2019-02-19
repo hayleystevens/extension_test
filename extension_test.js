@@ -73,26 +73,17 @@
     $('#selected_marks_title').text(worksheet.name);
    
  // get the summary data for the sheet
- worksheet.getSummaryDataAsync().then(reportSelectedMarks);
-    function reportSelectedMarks(sumdata) {
-      const worksheetData = sumdata;
 
-        // Map our data into the format which the data table component expects it
-        const data = worksheetData.data.map(function (row, index) {
-          const rowData = row.map(function (cell) {
-            return cell.formattedValue;
-          });
-  
-          return rowData;
-          alert('rowdata'+text(rowData));
-        });
-       
-      $('#Platform').text((data[0][0]));
-      $('#VideoID').text((data[0][-1]));
-      alert("Platform" + data[0][0]);
-      alert("VideoID" + data[0][1]);
-      }
-         
+ tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === "Details").getUnderlyingDataAsync().then(dataTable => {
+  let field = dataTable.columns.find(column => column.fieldName === "Platform");
+  let list = [];
+  for (let row of dataTable.data) {
+    list.push(row[field.index].value);
+  }
+  let values = list.filter((el, i, arr) => arr.indexOf(el) === i);
+  console.log(values)
+  alert("Platform-Values: "+values);
+});      
 
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
