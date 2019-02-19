@@ -86,7 +86,7 @@
           return rowData;
         });
        
-        function Platform(){
+        function Platform(data){
           return data[0][0];
         };
         alert(Platform);
