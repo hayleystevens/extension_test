@@ -96,6 +96,10 @@
       loadSelectedMarks(worksheetName);
     });
   }
+  function Platform(){
+    return data[0][0];
+  };
+  alert(Platform);
 
   function initializeButtons () {
     $('#show_choose_sheet_button').click(showChooseSheetDialog);
