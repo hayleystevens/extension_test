@@ -75,12 +75,11 @@
    
 
  // get the summary data for the sheet
- worksheet.getSummaryDataAsync().then(function (sumdata) {
-  const worksheetData = sumdata;
+ worksheet.getSummaryDataAsync().then(function(t) {
+  var rawData = t.getData();  
  });
  
- alert(sumdata);
-
+ alert("rawdata"+rawData);
 
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterEvent) {
