@@ -58,7 +58,8 @@
   }
 
   // This variable will save off the function we can call to unregister listening to marks-selected events
-  let unregisterEventHandlerFunction;
+  let unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, filterChangedHandler);
+ unregisterHandlerFunctions.push(unregisterHandlerFunction);
 
   function loadSelectedMarks (worksheetName) {
     // Remove any existing event listeners
@@ -79,12 +80,7 @@
   const worksheetData = sumdata;
  });
  alert("sumdata"+sumdata);
-
-    // Add an event listener for the selection changed event on this sheet.
-    unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterEvent) {
-      // When the selection changes, reload the data
-      loadSelectedMarks(worksheetName);
-    });
+ 
   }
 
   function initializeButtons () {
