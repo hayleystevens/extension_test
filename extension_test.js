@@ -89,7 +89,7 @@
       else {
     
       
-      alert("Mark Len" + marks.length);
+      alert("Mark Len" + marks.data[0]);
     
       //  $.each(marks, function (i, mark) {
     
