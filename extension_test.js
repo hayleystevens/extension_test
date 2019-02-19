@@ -75,15 +75,9 @@
    
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(reportSelectedMarks);
-    function reportSelectedMarks(marks) {
-      var html = "";
-      if (marks.length == 0)
-
-      alert("selectedMarks: empty list");
-    
-      else {
-    
-        const worksheetData = marks.data[0];
+    function reportSelectedMarks(sumdata) {
+      const worksheetData = sumdata;
+      alert("sumdata"+sumdata);
 
         // Map our data into the format which the data table component expects it
         const data = worksheetData.data.map(function (row, index) {
