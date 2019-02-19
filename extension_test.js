@@ -86,13 +86,10 @@
           return rowData;
         });
 
-        var Platform = text(data[0][0]);
-        var VideoID=text(data[0][1]);
-         alert("Platform" + Platform);
-      alert("VideoID" + VideoID);
+         alert("Platform" + data[0][0]);
+      alert("VideoID" + data[0][1]);
       }
          
-
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
       // When the selection changes, reload the data
