@@ -75,30 +75,55 @@
     $('#selected_marks_title').text(worksheet.name);
 
     // Call to get the selected marks for our sheet
-    worksheet.getSelectedMarksAsync().then($('#returnID-Title').text("reportSelectedMarks"));
+    worksheet.getSelectedMarksAsync().then($('#returnID-Title').text(reportSelectedMarks));
 
   function reportSelectedMarks(marks) {
       var html = "";
+      if (marks.length == 0)
 
-      for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-          var pairs = marks[markIndex].getPairs();
+      alert("selectedMarks: empty list");
+    
+      else {
+    
+      var alertOutput="";
+    
+       $.each(marks, function (i, mark) {
+    
+       alertOutput = alertOutput + "marks:\n";
+    
+      $.each(mark.getPairs(), function (j, pair) {
+    
+      alertOutput = alertOutput + "  " + (pair.fieldName) + ": " + pair.value;
+    
+      });
+    
+      alertOutput = alertOutput + "\n";
+    
+       });
+    
+      }
+    
+      alert(alertOutput);
+    
+      // for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+      //     var pairs = marks[markIndex].getPairs();
 
-          for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-              var pair = pairs[pairIndex];
-              if (pair.fieldName="ID")
-              {
-                var found_ID=pair.formattedValue;
-                return found_ID;
-              }
-              else{
-                var found_ID = "could not find";
-                return found_ID;
-              }
-            }
+      //     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      //         var pair = pairs[pairIndex];
+      //         if (pair.fieldName="ID")
+      //         {
+      //           var found_ID=pair.formattedValue;
+      //           return found_ID;
+      //         }
+      //         else{
+      //           var found_ID = "could not find";
+      //           return found_ID;
+      //         }
+      //       }
            
 
-      }
-  }
+      // }
+  // }
 
   // $('#returnID').text(found_ID);
 
