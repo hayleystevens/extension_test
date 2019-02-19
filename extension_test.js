@@ -88,11 +88,20 @@
     
       else {
     
-      
+        const worksheetData = marks.data[0];
+
+        // Map our data into the format which the data table component expects it
+        const data = worksheetData.data.map(function (row, index) {
+          const rowData = row.map(function (cell) {
+            return cell.formattedValue;
+          });
+  
+          return rowData;
+        });
       alert("Mark1" + marks.data[0]);
-      alert("Mark2" + marks.data[0][0]);
+      alert("Mark2" + data);
       alert("Mark3" + marks.data[0].data[0]);
-      alert("Mark4" + marks.data[0][1][2]);
+      alert("Mark4" + marks.data[0]);
     
       //  $.each(marks, function (i, mark) {
     
