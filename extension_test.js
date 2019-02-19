@@ -61,12 +61,7 @@
   let unregisterEventHandlerFunctions;
 
   function loadSelectedMarks (worksheetName) {
-    // Remove any existing event listeners
-    if (unregisterEventHandlerFunctions) {
-      unregisterEventHandlerFunction();
-    }
-
-    // Get the worksheet object we want to get the selected marks for
+     // Get the worksheet object we want to get the selected marks for
     const worksheet = getSelectedSheet(worksheetName);
 
     // Set our title to an appropriate value
@@ -81,10 +76,11 @@
  alert("sumdata"+sumdata);
 
  // Add an event listener for the selection changed event on this sheet.
- let unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, filterChangedHandler);
- unregisterHandlerFunctions.push(unregisterHandlerFunction);
+ unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterevent) {
+  // When the selection changes, reload the data
+  loadSelectedMarks(worksheetName);
+});
 
- 
   }
 
   function initializeButtons () {
