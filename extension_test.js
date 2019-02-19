@@ -87,9 +87,10 @@
         });
        
       $('#Platform').text(data[0][0]);
+      $('#FBLink').text("https://www.facebook.com/"+data[0][1]);
       $('#VideoID').text(data[0][1]);      
       }
-      //Need to return the following variables, Platform and Vidoe ID
+      //Need to return the following variables, Platform and Video ID
       //If UPPER(Platform) = 'YOUTUBE' then 'https://www.youtube.com/embed/'+VIDEO ID
       //If UPPER(Platform) = 'FACEOOK' THEN JAVASCRIPT AND HTML
       //ELSE '' // Other set up for YouTube and Facebook 
