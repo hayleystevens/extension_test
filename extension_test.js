@@ -75,16 +75,10 @@
    
 
  // get the summary data for the sheet
- worksheet.getSummaryDataAsync().then(dataTable => {
-  let field = dataTable.columns.find(column => column.fieldName === "State");
-  let list = [];
-  for (let row of dataTable.data) {
-    list.push(row[field.index].value);
-  }
-  let values = list.filter((el, i, arr) => arr.indexOf(el) === i);
- 
-});
- alert("values"+values);
+ worksheet.getSummaryDataAsync().then(function (sumdata) {
+  const worksheetData = sumdata;
+ });
+ alert("sumdata"+sumdata);
 
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterEvent) {
