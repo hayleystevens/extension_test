@@ -85,15 +85,15 @@
   
           return rowData;
         });
-       
+        alert("0.0 "+text(data[0][0]));
+        alert("1.0 "+text(data[1][0]));
+        alert("0.1 "+text(data[0][1]));
+        alert("1.1 "+text(data[1][1]));  
       $('#Platform').text(data[0][0]);
       $('#FBLink').text("https://www.facebook.com/"+data[0][1]);
       $('#VideoID').text(data[0][1]);      
       }
-      alert("0.0 "+text(data[0][0]));
-      alert("1.0 "+text(data[1][0]));
-      alert("0.1 "+text(data[0][1]));
-      alert("1.1 "+text(data[1][1]));
+
       //Need to return the following variables, Platform and Video ID
       //If UPPER(Platform) = 'YOUTUBE' then 'https://www.youtube.com/embed/'+VIDEO ID
       //If UPPER(Platform) = 'FACEOOK' THEN JAVASCRIPT AND HTML
