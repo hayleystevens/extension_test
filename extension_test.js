@@ -84,10 +84,11 @@
           });
   
           return rowData;
+     
         });
-        
+        alert('rowdata'+rowData);
       $('#Platform').text((data[0][0]));
-      $('#Video ID').text((data[0][1]));
+      $('#VideoID').text((data[0][-1]));
       alert("Platform" + data[0][0]);
       alert("VideoID" + data[0][1]);
       }
