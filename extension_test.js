@@ -81,7 +81,7 @@
     list.push(row[field.index].value);
   }
   let values = list.filter((el, i, arr) => arr.indexOf(el) === i);
-  console.log(values)
+  console.log(values);
   alert("Platform-Values: "+values);
 });      
 
