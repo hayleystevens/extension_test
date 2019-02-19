@@ -85,12 +85,11 @@
   
           return rowData;
         });
-        alert("0.0 "+(data[0][0]));
         alert("1.0 "+(data[1][0]));
         alert("0.1 "+(data[0][1]));
         alert("1.1 "+(data[1][1]));  
       $('#Platform').text(data[0][0]);
-      $('#FBLink').text("https://www.facebook.com/"+data[0][1]);
+      $('#FBLink').text("https://www.facebook.com/"+data[0][0]);
       $('#VideoID').text(data[0][1]);      
       }
 
