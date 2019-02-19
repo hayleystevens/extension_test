@@ -76,9 +76,9 @@
 
     // Call to get the selected marks for our sheet
 
-    // tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheet.name).getUnderlyingDataAsync().then(reportSelectedMarks);
+    // tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === worksheet.name).getSummaryDataAsync().then(reportSelectedMarks);
 
-    worksheet.getUnderlyingDataAsync().then(reportSelectedMarks);
+    worksheet.getSummaryDataAsync().then(reportSelectedMarks);
 
   function reportSelectedMarks(marks) {
       var html = "";
