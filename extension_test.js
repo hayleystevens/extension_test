@@ -85,7 +85,11 @@
   
           return rowData;
         });
-      $('#returnID-Title').text((data[0][0]));
+        
+      $('#Platform').text((data[0][0]));
+      $('#Video ID').text((data[0][1]));
+      alert("Platform" + data[0][0]);
+      alert("VideoID" + data[0][1]);
       }
          
 
