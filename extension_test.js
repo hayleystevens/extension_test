@@ -89,7 +89,7 @@
         alert("0.1 "+(data[0][1]));
         alert("1.1 "+(data[1][1]));  
       $('#Platform').text(data[0][0]);
-      $('#FBLink').text("https://www.facebook.com/"+data[0][0]);
+      $('#FBLink').text("https://www.facebook.com/")+text(data[0][0]);
       $('#VideoID').text(data[0][1]);      
       }
 
