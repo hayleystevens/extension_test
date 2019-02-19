@@ -86,9 +86,8 @@
           return rowData;
         });
        
-        function Platform(data){
-          return data[0][0];
-        };
+        const Platfrom = data[0][0];
+
         alert(Platform);
 
          alert("Platform" + data[0][0]);
