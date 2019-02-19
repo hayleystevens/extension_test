@@ -82,19 +82,17 @@
 
       for (var markIndex = 0; markIndex < marks.length; markIndex++) {
           var pairs = marks[markIndex].getPairs();
-          html += "<b>Mark " + markIndex + ":</b><ul>";
 
           for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
               var pair = pairs[pairIndex];
-              html += "<li><b>Field Name:</b> " + pair.fieldName;
-              html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";
-          }
+              if (pair.fieldName="ID")
+              {
+                var found_ID=pair.formattedValue;
+              }
+            }
+            return found_ID;
 
-          html += "</ul>";
       }
-
-      var infoDiv = document.getElementById('markDetails');
-      infoDiv.innerHTML = html;
   }
 
     // Add an event listener for the selection changed event on this sheet.
@@ -115,4 +113,5 @@
     });
   }
 })();
+
 
