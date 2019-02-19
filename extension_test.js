@@ -75,7 +75,7 @@
     $('#selected_marks_title').text(worksheet.name);
 
     // Call to get the selected marks for our sheet
-    worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
+    worksheet.getSelectedMarksAsync().then($('#returnID-Title').text("reportSelectedMarks"));
 
   function reportSelectedMarks(marks) {
       var html = "";
@@ -100,7 +100,7 @@
       }
   }
 
-  $('#returnID').text(found_ID);
+  // $('#returnID').text(found_ID);
 
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
