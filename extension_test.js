@@ -84,9 +84,9 @@
           });
   
           return rowData;
-     
+          alert('rowdata'+text(rowData));
         });
-        alert('rowdata'+text(rowData));
+       
       $('#Platform').text((data[0][0]));
       $('#VideoID').text((data[0][-1]));
       alert("Platform" + data[0][0]);
