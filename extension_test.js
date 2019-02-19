@@ -74,10 +74,41 @@
     alert(worksheet.name);
    
     // Call to get the selected marks for our sheet
-    worksheet.getSummaryDataAsync().then(function(t){  
-      var rawData = t.getData();  
- }); 
- alert("1"+rawData); 
+    worksheet.getSummaryDataAsync().then(reportSelectedMarks);
+
+    // worksheet.getSelectedMarksAsync().then(reportSelectedMarks);
+
+  function reportSelectedMarks(marks) {
+      var html = "";
+      if (marks.length == 0)
+
+      alert("selectedMarks: empty list");
+    
+      else {
+    
+        const worksheetData = marks.data[0];
+
+        // Map our data into the format which the data table component expects it
+        const data = worksheetData.data.map(function (row, index) {
+          const rowData = row.map(function (cell) {
+            return cell.formattedValue;
+          });
+  
+          return rowData;
+        });
+      // alert("Mark1" + marks.data[0]);
+      // alert("Mark2" + data);
+      alert("Mark3" + data[0][0]);
+      $('#returnID-Title').text(filtervalues(data[0][0]));
+      }
+      function filtervalues(val){
+        if(val == "West"){
+          return "this is awesome"
+        }
+        else{
+          return "The rest of the country"
+        }
+      };
     
 
     // Add an event listener for the selection changed event on this sheet.
@@ -97,4 +128,4 @@
       return sheet.name === worksheetName;
     });
   }
-})();
+}})();
