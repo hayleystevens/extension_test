@@ -112,6 +112,30 @@
         }
       };
     
+      // alert(alertOutput);
+    
+      // for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+      //     var pairs = marks[markIndex].getPairs();
+
+      //     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      //         var pair = pairs[pairIndex];
+      //         if (pair.fieldName="ID")
+      //         {
+      //           var found_ID=pair.formattedValue;
+      //           return found_ID;
+      //         }
+      //         else{
+      //           var found_ID = "could not find";
+      //           return found_ID;
+      //         }
+      //       }
+           
+
+      // }
+  // }
+
+  // $('#returnID').text(found_ID);
+
     // Add an event listener for the selection changed event on this sheet.
     unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
       // When the selection changes, reload the data
