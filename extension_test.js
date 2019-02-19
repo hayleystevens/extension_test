@@ -86,10 +86,6 @@
           return rowData;
         });
        
-        const Platfrom = data[0][0];
-
-        alert(Platform);
-
          alert("Platform" + data[0][0]);
       alert("VideoID" + data[0][1]);
       }
