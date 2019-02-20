@@ -90,7 +90,12 @@
       $('#VideoID').text((data[0][-1]));
       alert("Platform" + data[0][0]);
       alert("VideoID" + data[0][1]);
-      }
+
+      const columns = worksheetData.columns.map(function (column) {
+        return { title: column.fieldName };
+      });
+    alert("coumn data" +columns[0][0]);  
+    }
          
 
      // Add an event listener for the selection changed event on this sheet.
