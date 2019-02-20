@@ -97,7 +97,7 @@
       });
       
     alert("column0" +columns[0]);  
-    alert("column1" +columns[1]);  
+    alert("column1" +columns);  
     }
          
 
