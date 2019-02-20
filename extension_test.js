@@ -109,7 +109,7 @@
         $("#fb-post").show();
         alert("https://www.facebook.com/" + videoID);
         $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
-        alert($("[data-href]"));
+        alert($("div[data-href]"));
       }
       //'https://www.youtube.com/embed/'
     }
