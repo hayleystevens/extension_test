@@ -74,7 +74,6 @@
    
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(reportSelectedMarks);
-
     function reportSelectedMarks(sumdata) {
       const worksheetData = sumdata;
 
@@ -85,20 +84,12 @@
           });
   
           return rowData;
-         });
-
-        const columns = worksheetData.columns.map(function (column) {
-          return {title: column.fieldName};
+ 
         });
-      
-        // Populate the data table with the rows and columns we just pulled out
-        populateDataTable(data, columns);
-            
       $('#Platform').text((data[0][0]));
       $('#VideoID').text((data[0][-1]));
       alert("Platform" + data[0][0]);
       alert("VideoID" + data[0][1]);
-      alert("columns "+columns[0][0]);
       }
          
 
