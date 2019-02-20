@@ -91,8 +91,8 @@
       $('#VideoID').text(videoID);
 
       //Alerts
-      alert("Platform " + platform);
-      alert("VideoID " + videoID);
+      // alert("Platform " + platform);
+      // alert("VideoID " + videoID);
   
       if (platform.toUpperCase()=='FACEBOOK')
       {
@@ -100,7 +100,7 @@
         $("#fb-root").show();
         $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
-        $("#videolink").attr("data-href", "https://www.facebook.com/" + videoID);
+        $(".fb-video").attr("data-href", "https://www.facebook.com/" + videoID);
         alert($("div[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
