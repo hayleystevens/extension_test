@@ -106,14 +106,12 @@
       {
         alert("HI IM FACEBOOK");
         // check if fb is hidden
-        if($("#fb-root").isHidden()== true||$("#fb-post").isHidden()== true){
-          // if it is hidden, then show
-          $("#fb-root").show();
-          $("#fb-post").show();
-          alert("https://www.facebook.com/" + videoID);
-          $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
-        }
+        $("#fb-root").show();
+        $("#fb-post").show();
+        alert("https://www.facebook.com/" + videoID);
+        $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
       }
+      //'https://www.youtube.com/embed/'
     }
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
