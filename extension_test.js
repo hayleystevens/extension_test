@@ -100,8 +100,10 @@
         $(".fb-root").show();
         $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
+       //JT 
        // $("fb-video").attr("data-href", "https://www.facebook.com/" + videoID);
-        $('#a[data-href]').attr("data-href", "https://www.facebook.com/" + videoID);
+       //HS attempts 
+       $('#a[data-href]').attr("data-href", "https://www.facebook.com/" + videoID);
         alert($('#a[data-href]'));
         alert($("a[data-href]").toString());
       }
