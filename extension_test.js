@@ -95,7 +95,7 @@
         return { title: column.fieldName };
       });
       
-    alert("column 1.1" +columns);  
+    alert("column 1.1" +text(columns));  
     }
          
 
