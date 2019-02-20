@@ -97,10 +97,10 @@
       if (platform.toUpperCase()=='FACEBOOK')
       {
         alert("HI IM FACEBOOK");
-        $("#fb-root").show();
+        $(".fb-root").show();
         $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
-        $(".videolink").attr("data-href", "https://www.facebook.com/" + videoID);
+        $(".fb-video").attr("data-href", "https://www.facebook.com/" + videoID);
         alert($("div[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
