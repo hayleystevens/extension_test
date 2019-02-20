@@ -94,7 +94,7 @@
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
-    alert("coumn data" +columns[0][0]);  
+    alert("coumn data" +columns);  
     }
          
 
