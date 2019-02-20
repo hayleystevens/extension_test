@@ -23,6 +23,9 @@
     <script src="./extension_test.js"></script>
   </head>
   <body>
+      <div id="fb-root"></div>
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+      
     <div class="container-fluid">
         <!-- Main UI -->
         <div id="selected_marks">
@@ -55,21 +58,15 @@
             </div>
         </div>
     </div>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1005145659681437';
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+
+
     <!-- Your embedded video player code -->
     <div id="fb-post" class="fb-post" 
         data-allowfullscreen="true"
         data-autoplay="true" 
         data-show-text="true">
     </div>
+    
     <!--Settings:
         - data-allowfullscreen: Allow the video to be played in fullscreen mode. The default is false.
         - data-autoplay: Automatically start playing the video when the page loads. The video will be played without sound (muted). People can turn on sound via the video player controls. This setting does not apply to mobile devices. The default is false.
