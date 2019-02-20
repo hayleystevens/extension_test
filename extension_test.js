@@ -86,9 +86,11 @@
 
     function reportSelectedMarks(sumdata) {
       alert("2");
+      alert(sumdata);
       var columns = sumdata.getColumns();
-	    var data = sumdata.getData();
       alert("3");
+	    var data = sumdata.getData();
+      alert("3.1");
 	    //convert to field:values convention
 	    function reduceToObjects(cols,data) {
         alert("4");
