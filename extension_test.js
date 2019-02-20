@@ -105,11 +105,11 @@
       if (platform.toUpperCase()=='FACEBOOK')
       {
         alert("HI IM FACEBOOK");
-        // check if fb is hidden
         $("#fb-root").show();
         $("#fb-post").show();
         alert("https://www.facebook.com/" + videoID);
         $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
+        alert($("[data-href]"));
       }
       //'https://www.youtube.com/embed/'
     }
