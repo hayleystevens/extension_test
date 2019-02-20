@@ -76,7 +76,8 @@
     worksheet.getSummaryDataAsync().then(reportSelectedMarks);
 
     function reportSelectedMarks(sumdata) {
-    //Map our data into the format which the data table component expects it
+      const worksheetData = sumdata;
+      //Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
             return cell.formattedValue;
@@ -97,9 +98,9 @@
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
-    //Alerts
-    alert("column0" +columns[0]);  
-    alert("column1" +columns);  
+      //Alerts
+      alert("column0" +columns[0]);  
+      alert("column1" +columns);  
     }
          
 
