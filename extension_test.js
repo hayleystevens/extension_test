@@ -101,21 +101,20 @@
       // //Alerts
       // alert("column0" +columns[0]);  
       // alert("column1" +columns);  
-    }
-    if (platform.toUpperCase()=='FACEBOOK')
-    {
-      alert("HI IM FACEBOOK");
-      // check if fb is hidden
-      if($("#fb-root").isHidden()== true||$("#fb-post").isHidden()== true){
-        // if it is hidden, then show
-        $("#fb-root").show();
-        $("#fb-post").show();
-        alert("https://www.facebook.com/" + videoID);
-        $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
+    
+      if (platform.toUpperCase()=='FACEBOOK')
+      {
+        alert("HI IM FACEBOOK");
+        // check if fb is hidden
+        if($("#fb-root").isHidden()== true||$("#fb-post").isHidden()== true){
+          // if it is hidden, then show
+          $("#fb-root").show();
+          $("#fb-post").show();
+          alert("https://www.facebook.com/" + videoID);
+          $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
+        }
       }
     }
-
-
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
       // When the selection changes, reload the data
