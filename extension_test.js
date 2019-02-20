@@ -106,9 +106,9 @@
       {
         alert("HI IM FACEBOOK");
         $("#fb-root").show();
-        $("#fb-post").show();
+        $(".fb-post").show();
         alert("https://www.facebook.com/" + videoID);
-        $("#fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
+        $(".fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
         alert($("div[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
