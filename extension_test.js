@@ -80,7 +80,9 @@
     } 
     alert("1");
     // get the summary data for the sheet
-    worksheet.getSummaryDataAsync(options).then(reportSelectedMarks);
+    worksheet.getSummaryDataAsync(options).then(function (t) {
+      reportSelectedMarks(t)
+    });
 
     function reportSelectedMarks(sumdata) {
       alert("2");
