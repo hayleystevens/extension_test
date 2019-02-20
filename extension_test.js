@@ -101,9 +101,8 @@
         $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
        // $("fb-video").attr("data-href", "https://www.facebook.com/" + videoID);
-        $('a[data-href]').attr('href', function () {
-          return $(this).attr("data-href", "https://www.facebook.com/" + videoID)
-      })
+        $('a[data-href]').attr("data-href", "https://www.facebook.com/" + videoID);
+        alert($('a[data-href]'));
         alert($("a[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
