@@ -71,58 +71,35 @@
 
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
-    
-    var options = {
-      maxRows: 0, // Max rows to return. Use 0 to return all rows
-      ignoreAliases: false,
-      ignoreSelection: true,
-      includeAllColumns: false
-    } 
-    alert("1");
+  
     // get the summary data for the sheet
-    worksheet.getSummaryDataAsync(options).then(function (t) {
-      reportSelectedMarks(t)
-    });
+    worksheet.getSummaryDataAsync().then(reportSelectedMarks);
 
     function reportSelectedMarks(sumdata) {
-      alert("2");
-      alert(sumdata);
-      var columns = sumdata.getColumns();
-      alert("3");
-	    var data = sumdata.getData();
-      alert("3.1");
-	    //convert to field:values convention
-	    function reduceToObjects(cols,data) {
-        alert("4");
-		    var fieldNameMap = $.map(cols, function(col) { return col.getFieldName(); });
-		    var dataToReturn = $.map(data, function(d) {
-          return d.reduce(function(memo, value, idx) {memo[fieldNameMap[idx]] = value.value; return memo;}, {});
-        });
-		  return dataToReturn;
-	    }
-	
-	    var niceData = reduceToObjects(columns, data);
-      alert("nicedata "+niceData);
-      // Map our data into the format which the data table component expects it
-      // const data = worksheetData.data.map(function (row, index) {
-      //   const rowData = row.map(function (cell) {
-      //       return cell.formattedValue;
-      //     });
-  
-      //     return rowData;
- 
-      //   });
-      // $('#Platform').text((data[0][0]));
-      // $('#VideoID').text((data[0][1]));
-      // alert("Platform" + data[0][0]);
-      // alert("VideoID" + data[0][1]);
+    //Map our data into the format which the data table component expects it
+      const data = worksheetData.data.map(function (row, index) {
+        const rowData = row.map(function (cell) {
+            return cell.formattedValue;
+          });
+        return rowData;
+      });
+      var platform = data[0][1];
+      var videoID = data[0][0];
+      // Setting the HTML
+      $('#Platform').text(platform);
+      $('#VideoID').text(videoID);
 
-      // const columns = worksheetData.columns.map(function (column) {
-      //   return { title: column.fieldName };
-      // });
-      
-    // alert("column0" +columns[0]);  
-    // alert("column1" +columns);  
+      //Alerts
+      alert("Platform" + platform);
+      alert("VideoID" + videoID);
+
+      //Getting column names
+      const columns = worksheetData.columns.map(function (column) {
+        return { title: column.fieldName };
+      });
+    //Alerts
+    alert("column0" +columns[0]);  
+    alert("column1" +columns);  
     }
          
 
