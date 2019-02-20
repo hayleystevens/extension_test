@@ -100,8 +100,7 @@
         $("#fb-root").show();
         $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
-        // $(".fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
-        $('#fb-video').html('<data-href="'+"https://www.facebook.com/" + videoID+'">link</a>');
+        $(".fb-video?").attr("data-href", "https://www.facebook.com/" + videoID);
         alert($("div[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
