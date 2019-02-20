@@ -83,9 +83,8 @@
     worksheet.getSummaryDataAsync(options).then(reportSelectedMarks);
 
     function reportSelectedMarks(sumdata) {
-      const worksheetData = sumdata;
-      var columns = table.getColumns();
-	    var data = table.getData();
+      var columns = sumdata.getColumns();
+	    var data = sumdata.getData();
 	
 	    //convert to field:values convention
 	    function reduceToObjects(cols,data) {
