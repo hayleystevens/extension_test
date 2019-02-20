@@ -74,6 +74,7 @@
    
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(reportSelectedMarks);
+
     function reportSelectedMarks(sumdata) {
       const worksheetData = sumdata;
 
@@ -95,7 +96,8 @@
         return { title: column.fieldName };
       });
       
-    alert("column 1.1" +columns[0]);  
+    alert("column0" +columns[0]);  
+    alert("column1" +columns[1]);  
     }
          
 
