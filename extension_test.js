@@ -98,10 +98,10 @@
       {
         alert("HI IM FACEBOOK");
         $("#fb-root").show();
-        $(".fb-post").show();
+        $(".fb-video").show();
         alert("https://www.facebook.com/" + videoID);
         // $(".fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
-        $('#container').html('<data-href="'+"https://www.facebook.com/" + videoID+'">link</a>');
+        $('#fb-video').html('<data-href="'+"https://www.facebook.com/" + videoID+'">link</a>');
         alert($("div[data-href]").toString());
       }
       //'https://www.youtube.com/embed/'
