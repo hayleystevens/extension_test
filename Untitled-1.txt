@@ -71,41 +71,37 @@
 
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
-  
-    // get the summary data for the sheet
-    worksheet.getSummaryDataAsync().then(reportSelectedMarks);
+   
+ // get the summary data for the sheet
+ worksheet.getSummaryDataAsync().then(reportSelectedMarks);
 
     function reportSelectedMarks(sumdata) {
       const worksheetData = sumdata;
-      //Map our data into the format which the data table component expects it
-      const data = worksheetData.data.map(function (row, index) {
-        const rowData = row.map(function (cell) {
+
+        // Map our data into the format which the data table component expects it
+        const data = worksheetData.data.map(function (row, index) {
+          const rowData = row.map(function (cell) {
             return cell.formattedValue;
           });
-        return rowData;
-      });
-      var platform = data[0][1];
-      var videoID = data[0][0];
-      // Setting the HTML
-      $('#Platform').text(platform);
-      $('#VideoID').text(videoID);
-
-      //Alerts
-      alert("Platform " + platform);
-      alert("VideoID " + videoID);
   
-      if (platform.toUpperCase()=='FACEBOOK')
-      {
-        alert("HI IM FACEBOOK");
-        $("#fb-root").show();
-        $(".fb-post").show();
-        alert("https://www.facebook.com/" + videoID);
-        // $(".fb-post").attr("data-href", "https://www.facebook.com/" + videoID);
-        $('#container').html('<data-href="'+"https://www.facebook.com/" + videoID+'">link</a>');
-        alert($("div[data-href]").toString());
+          return rowData;
+         });
+
+        const columns = worksheetData.columns.map(function (column) {
+          return {title: column.fieldName};
+        });
+      
+        // Populate the data table with the rows and columns we just pulled out
+        populateDataTable(data, columns);
+            
+      $('#Platform').text((data[0][0]));
+      $('#VideoID').text((data[0][-1]));
+      alert("Platform" + data[0][0]);
+      alert("VideoID" + data[0][1]);
+      alert("columns "+columns[0][0]);
       }
-      //'https://www.youtube.com/embed/'
-    }
+         
+
      // Add an event listener for the selection changed event on this sheet.
      unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (selectionEvent) {
       // When the selection changes, reload the data
