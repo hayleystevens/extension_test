@@ -78,16 +78,18 @@
       ignoreSelection: true,
       includeAllColumns: false
     } 
-
+    alert("1");
     // get the summary data for the sheet
     worksheet.getSummaryDataAsync(options).then(reportSelectedMarks);
 
     function reportSelectedMarks(sumdata) {
+      alert("2");
       var columns = sumdata.getColumns();
 	    var data = sumdata.getData();
-	
+      alert("3");
 	    //convert to field:values convention
 	    function reduceToObjects(cols,data) {
+        alert("4");
 		    var fieldNameMap = $.map(cols, function(col) { return col.getFieldName(); });
 		    var dataToReturn = $.map(data, function(d) {
           return d.reduce(function(memo, value, idx) {memo[fieldNameMap[idx]] = value.value; return memo;}, {});
