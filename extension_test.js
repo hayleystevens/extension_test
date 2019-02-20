@@ -87,14 +87,17 @@
  
         });
       $('#Platform').text((data[0][0]));
-      $('#VideoID').text((data[0][-1]));
+      $('#VideoID').text((data[0][1]));
       alert("Platform" + data[0][0]);
       alert("VideoID" + data[0][1]);
 
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
-    alert("coumn data" +columns);  
+    alert("column 0.0" +column[0][0]);  
+    alert("column 0.1" +column[0][1]);  
+    alert("column 1.0" +column[1][0]);  
+    alert("column 1.1" +column[1][1]);  
     }
          
 
