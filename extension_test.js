@@ -96,10 +96,10 @@
   
       if (platform.toUpperCase()=='FACEBOOK')
       {
-        alert("HI IM FACEBOOK");
-        alert("https://www.facebook.com/" + videoID);
-        // $(".fb-video").attr("data-href", "https://www.facebook.com/" + videoID)
-        alert("1");
+        
+        // alert("https://www.facebook.com/" + videoID);
+        $(".fb-video").attr("data-href", "https://www.facebook.com/" + videoID)
+        
         FB.XFBML.parse();
         alert("here");
       }
