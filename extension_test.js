@@ -102,6 +102,7 @@
         alert("https://www.facebook.com/" + videoID);
         $(".fb-video").attr("data-href", "https://www.facebook.com/" + videoID)
         FB.XFBML.parse();
+        alert($(".fb-video").attr("data-href"));
       }
       //'https://www.youtube.com/embed/'
     }
